@@ -1,25 +1,29 @@
 package com.gildedrose.presentation
 
-import com.gildedrose.data.factory.DataFactory
+import com.gildedrose.data.factory.DataStore
 
 fun main(args: Array<String>) {
     println("OMGHAI!")
 
-    val items = DataFactory.getItems()
-    val app = GildedRose(items)
+    val items = DataStore.getItems()
+    val gildedRosePresenter = GildedRose(items)
 
-    var days = 2
+    var days = DEFAULT_DAYS
     if (args.isNotEmpty()) {
         days = Integer.parseInt(args[0]) + 1
     }
 
-    for (day in 0..<days) {
-        println("-------- day $day --------")
-        println("name, sellIn, quality")
+    for (day in 0 until days) {
+        val sb = StringBuilder()
+        sb.append("-------- day $day --------\n")
+        sb.append("name, sellIn, quality\n")
         for (item in items) {
-            println(item)
+            sb.append(item).append("\n")
         }
-        println()
-        app.updateQuality()
+        println(sb.toString())
+        gildedRosePresenter.updateQuality()
     }
 }
+private const val DEFAULT_DAYS = 2
+
+

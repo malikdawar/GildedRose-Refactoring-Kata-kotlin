@@ -35,7 +35,7 @@ java {
 }
 
 application {
-	mainClass.set("com.gildedrose.TexttestFixtureKt")
+	mainClass.set("com.gildedrose.presentation.MainKt")
 }
 
 tasks.register<JavaExec>("text") {
