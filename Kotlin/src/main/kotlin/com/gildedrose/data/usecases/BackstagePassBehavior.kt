@@ -2,6 +2,10 @@ package com.gildedrose.data.usecases
 
 import com.gildedrose.data.models.Item
 
+/**
+ * BackstagePassBehavior.kt overrides ItemBehavior
+ * has the operations specifically for this category
+ */
 class BackstagePassBehavior : ItemBehavior {
     override fun update(item: Item) {
         item.sellIn--

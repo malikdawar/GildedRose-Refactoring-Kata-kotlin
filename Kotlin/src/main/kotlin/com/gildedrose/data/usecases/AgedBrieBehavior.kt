@@ -2,6 +2,10 @@ package com.gildedrose.data.usecases
 
 import com.gildedrose.data.models.Item
 
+/**
+ * AgedBrieBehavior.kt overrides ItemBehavior
+ * has the operations specifically for this category
+ */
 class AgedBrieBehavior : ItemBehavior {
     override fun update(item: Item) {
         item.sellIn--

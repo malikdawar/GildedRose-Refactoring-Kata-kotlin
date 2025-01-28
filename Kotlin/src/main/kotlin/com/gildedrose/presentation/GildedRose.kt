@@ -12,6 +12,11 @@ import com.gildedrose.data.usecases.ConjuredItemBehavior
 import com.gildedrose.data.usecases.NormalItemBehavior
 import com.gildedrose.data.usecases.SulfurasBehavior
 
+/**
+ * GildedRose.kt works as a controller of the main function similar to the VM of any UI
+ * gets the items from the main.kt
+ * categories the items as per the available categories and performs operations by updating the quality of items
+ */
 class GildedRose(private var items: List<Item>) {
 
     private val itemBehaviors = mapOf(

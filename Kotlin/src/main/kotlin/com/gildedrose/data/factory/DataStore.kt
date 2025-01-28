@@ -2,7 +2,18 @@ package com.gildedrose.data.factory
 
 import com.gildedrose.data.models.Item
 
+/**
+ * Singleton object that serves as a data store for retrieving the initial list of items.
+ * It works as db or an external data source for the application.
+ */
 object DataStore {
+
+    /**
+     * Retrieves a list of predefined items.
+     * Each item has a name, sellIn value (days to sell), and quality value.
+     *
+     * @return the item list representing the inventory.
+     */
     fun getItems(): List<Item> {
         return listOf(
             Item("+5 Dexterity Vest", 10, 20),
