@@ -37,3 +37,11 @@ java {
 application {
 	mainClass.set("com.gildedrose.TexttestFixtureKt")
 }
+
+tasks.register<JavaExec>("text") {
+	group = "application"
+	description = "Run the Text"
+	mainClass.set(application.mainClass.get())
+	classpath = sourceSets["main"].runtimeClasspath
+	args = listOf()
+}
