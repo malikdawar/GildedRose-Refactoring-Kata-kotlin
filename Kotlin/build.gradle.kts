@@ -35,5 +35,13 @@ java {
 }
 
 application {
-	mainClass.set("com.gildedrose.TexttestFixtureKt")
+	mainClass.set("com.gildedrose.presentation.MainKt")
+}
+
+tasks.register<JavaExec>("text") {
+	group = "application"
+	description = "Run the Text"
+	mainClass.set(application.mainClass.get())
+	classpath = sourceSets["main"].runtimeClasspath
+	args = listOf()
 }
